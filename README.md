@@ -36,6 +36,9 @@ python3 app.py
 
 - You should then be able to access the application via port 3015, http://localhost:3015/home/
 
+## 4.1. Sample Run
+![plot](./image-flask-app-home.png)
+
 ## 5. Apache WSGI Setup
 In a production environment, it is recommended to run a flask application via Apache or a similar application:
 - Install and configure apache
