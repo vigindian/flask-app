@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 #flask stuff
-from flask import Blueprint, request,jsonify, render_template, flash, redirect, url_for, Markup
+from flask import Blueprint, request,jsonify, render_template, flash, redirect, url_for
 
 #custom-form class
 from forms import ContactForm

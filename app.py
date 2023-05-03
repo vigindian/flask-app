@@ -3,7 +3,7 @@
 #Flask maps HTTP requests to Python functions
 
 #flask class, handle-requests
-from flask import Flask, request, render_template, redirect, url_for, Markup
+from flask import Flask, request, render_template, redirect, url_for
 
 #custom config definitions
 from config import Config
