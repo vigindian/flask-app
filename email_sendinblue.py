@@ -29,21 +29,14 @@ def sendEmail(subject: str, senderemail: str, recipientemail: str, recipientname
   replyTo = {"name":"FlaskApp","email":senderemail}
   html_content = "<html><body><p>" + emailcontent + "</p></body></html>"
   to = [{"email":recipientemail,"name":recipientname}]
-
   #params = {"parameter":"My param value","subject":"New Subject"}
-
-  print (subject)
-  print ("sender: " +str(sender))
-  print (replyTo)
-  print (html_content)
-  print (to)
 
   #send_smtp_email = sib_api_v3_sdk.SendSmtpEmail(to=to, bcc=bcc, cc=cc, reply_to=replyTo, headers=params, html_content=html_content, sender=sender, subject=subject)
   send_smtp_email = sib_api_v3_sdk.SendSmtpEmail(to=to, reply_to=replyTo, html_content=html_content, sender=sender, subject=subject)
 
   try:
     api_response = api_instance.send_transac_email(send_smtp_email)
-    print(api_response)
+    #print(api_response)
     RC = True
   except ApiException as e:
     print("Exception when calling SMTPApi->send_transac_email: %s\n" % e)
