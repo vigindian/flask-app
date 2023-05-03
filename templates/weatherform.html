@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div id="loading"></div>
+    <div id="content">
+      <h3>Weather Details</h3>
+      <br>
+      <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+
+	<p>
+            {{ form.city.label }}
+            {{ form.city(size=16) }}
+            {% for error in form.city.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        
+        <input type="submit" name="submit_weather" value="Submit" onclick="loading();">
+      </form>
+      <br>
+      {% if output %}
+        <p>Results: {{ output }}</p>
+      {% endif %}
+      <br>
+    </div>
+{% endblock %}
