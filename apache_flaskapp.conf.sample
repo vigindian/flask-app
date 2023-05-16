@@ -2,14 +2,14 @@ Listen *:9080
 <VirtualHost *:9080>
     ServerName flaskapp.example.com
 
-    #CustomLog /var/log/apache2/flaskgroup-flaskapp.local_access.log common
-    #ErrorLog /var/log/apache2/flaskgroup-flaskapp.local_error.log
+    CustomLog /var/log/apache2/flaskgroup-flaskapp.local_access.log common
+    ErrorLog /var/log/apache2/flaskgroup-flaskapp.local_error.log
 
     ServerAdmin devops@example.com
     AllowEncodedSlashes NoDecode
 
     #start the py-flask app
-    WSGIScriptAlias / /home/py-flask-app/api.py process-group=flaskgroup
+    WSGIScriptAlias / /home/py-flask-app/app.py process-group=flaskgroup
     #load custom scripts in code directory; run app as flaskapp user
     WSGIDaemonProcess flaskgroup python-path=/home/py-flask-app user=flaskapp
     WSGIProcessGroup flaskgroup
